@@ -7,3 +7,8 @@ hash = "7b8943128ca907e4a81652c7e29d35948086e8a87f15831a655f6b50f9de80be"
 [[files]]
 file = "README.md"
 hash = "266c3c57ec1314ba98473e91ef9a192c071f0d1ea5a259112a64b64bc88816f2"
+
+[[files]]
+file = "mods/modernfix.pw.toml"
+hash = "a9593968393bae08257ba9aae887ad60fc49991f676b637006b2bcd89907f09a"
+metafile = true
