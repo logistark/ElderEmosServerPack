@@ -39,24 +39,68 @@ Install [packwiz](https://packwiz.infra.link/):
 go install github.com/packwiz/packwiz@latest
 ```
 
+Install [GitHub CLI](https://cli.github.com/):
+```bash
+# Arch Linux
+sudo pacman -S github-cli
+
+# Then authenticate
+gh auth login
+```
+
 ### Clone and Setup
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/ElderEmosServerPack.git
+git clone https://github.com/logistark/ElderEmosServerPack.git
 cd ElderEmosServerPack
 ```
 
-### Common Commands
+### Workflow: Adding a Mod
 
-**Add a mod from Modrinth:**
-```bash
-packwiz modrinth add <mod-slug>
-```
+**Each mod should be added in its own branch and pull request.**
 
-**Add a mod from CurseForge:**
-```bash
-packwiz curseforge add <mod-id>
-```
+1. **Update master branch:**
+   ```bash
+   git checkout master
+   git pull
+   ```
+
+2. **Create a new branch:**
+   ```bash
+   git checkout -b add-<mod-name>
+   ```
+
+3. **Add the mod:**
+   ```bash
+   packwiz modrinth add <mod-slug>
+   # or
+   packwiz curseforge add <mod-id>
+   ```
+
+4. **Test locally (optional):**
+   ```bash
+   packwiz serve
+   ```
+
+5. **Commit and push:**
+   ```bash
+   git add .
+   git commit -m "Add <mod-name>"
+   git push origin add-<mod-name>
+   ```
+
+6. **Create pull request:**
+   ```bash
+   gh pr create
+   ```
+
+7. **After merge, return to master:**
+   ```bash
+   git checkout master
+   git pull
+   ```
+
+### Other Useful Commands
 
 **Update all mods:**
 ```bash
@@ -68,9 +112,9 @@ packwiz update --all
 packwiz refresh
 ```
 
-**Serve pack locally for testing:**
+**Remove a mod:**
 ```bash
-packwiz serve
+packwiz remove <mod-name>
 ```
 
 ## Contributing

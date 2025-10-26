@@ -65,12 +65,51 @@ ElderEmosServerPack/
 
 ## Workflow for Adding Mods
 
-1. Search for the mod on Modrinth: https://modrinth.com/
-2. Copy the mod slug (from URL: modrinth.com/mod/**slug-here**)
-3. Run: `packwiz modrinth add <slug>`
-4. Test the pack locally with `packwiz serve`
-5. Commit changes: mod .pw.toml file, updated pack.toml, and updated index.toml
-6. Create PR with description of what the mod adds
+**Each mod should be added in its own branch and pull request.**
+
+1. **Ensure you're on an updated master branch:**
+   ```bash
+   git checkout master
+   git pull
+   ```
+
+2. **Create a new branch for the mod:**
+   ```bash
+   git checkout -b add-<mod-name>
+   ```
+
+3. **Search for the mod on Modrinth:** https://modrinth.com/
+4. **Copy the mod slug** (from URL: modrinth.com/mod/**slug-here**)
+5. **Add the mod with packwiz:**
+   ```bash
+   packwiz modrinth add <slug>
+   ```
+   (Packwiz will automatically add dependencies)
+
+6. **Test the pack locally** (optional but recommended):
+   ```bash
+   packwiz serve
+   ```
+
+7. **Commit all changes:**
+   ```bash
+   git add .
+   git commit -m "Add <mod-name>"
+   ```
+
+8. **Push branch and create PR:**
+   ```bash
+   git push origin add-<mod-name>
+   gh pr create
+   ```
+
+9. **After PR is merged, return to master:**
+   ```bash
+   git checkout master
+   git pull
+   ```
+
+10. **Repeat for next mod**
 
 ## Important Notes
 
