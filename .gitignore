@@ -5,7 +5,6 @@ packwiz-installer-bootstrap.jar
 # Minecraft
 *.jar
 !packwiz-installer-bootstrap.jar
-mods/
 config/
 saves/
 logs/
