@@ -1,0 +1,40 @@
+# Packwiz
+.packwizignore
+packwiz-installer-bootstrap.jar
+
+# Minecraft
+*.jar
+!packwiz-installer-bootstrap.jar
+mods/
+config/
+saves/
+logs/
+crash-reports/
+screenshots/
+resourcepacks/
+shaderpacks/
+server-resource-packs/
+downloads/
+.mixin.out/
+asm/
+natives/
+versions/
+libraries/
+assets/
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Temp files
+*.tmp
+*.bak
+*.old
